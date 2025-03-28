@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Pagina Non Trovata</title>
+
+  <link rel="canonical" href="https://www.villadeigelsi.it/storia" />
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="css/vendor.css">
+
+
+  <!-- favicons
+  ================================================== -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <style>
+  *, *:before, *:after { box-sizing: border-box; }
+  * { -webkit-tap-highlight-color: hsl(12, 76%, 44%); transform-style: preserve-3d; }
+  *:focus { outline: none !important; }
+  body, html { height: 100%; }
+  body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 12px;
+    background: #343434;
+    color: #ffffff;
+    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 24px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-moz-selection { background: none; }
+  ::selection { background: none; }
+  a {
+    display: block;
+    cursor: pointer;
+    -webkit-animation: pulseColor 1000ms linear 3100ms forwards;
+    animation: pulseColor 1000ms linear 3100ms forwards;
+    font-weight: 500;
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: white; /* Imposta il colore iniziale del testo */
+  }
+  a:hover b, a:focus b { color: #C63D1B; }
+  a:active b { color: #43CB9D; }
+  svg { width: 50px; height: auto; }
+  .crack {
+    position: relative;
+    z-index: 4;
+    margin-left: -50px;
+  }
+  .crack polyline {
+    fill: none;
+    stroke: #C63D1B;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1649.099;
+    stroke-dashoffset: 1649.099;
+    -webkit-animation: drawStroke 1500ms ease-out 500ms forwards;
+    animation: drawStroke 1500ms ease-out 500ms forwards;
+  }
+  main {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  main > div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .error-container, .message-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Media query per dispositivi mobili */
+  @media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 20px;
+  }
+  
+  .error-container, .message-container {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  
+  .error-container div, .message-container div {
+    text-align: left;
+  }
+  
+  /* Non modificare crack, resta come prima */
+  .crack {
+    /* mantiene la sua posizione e dimensione originale */
+    margin-left: 0;
+  }
+  
+  .message-container {
+    margin-left: 0; /* Rimuove il margine negativo */
+  }
+}
+  
+  /* Media query per dispositivi molto piccoli */
+  @media screen and (max-width: 480px) {
+    svg {
+      width: 30px;
+    }
+    body {
+      font-size: 18px;
+    }
+  }
+  main > div svg {
+    position: relative;
+    z-index: 1;
+  }
+  main > div svg polygon { fill: #343434; }
+  main > div span {
+    display: block;
+    position: relative;
+    z-index: 0;
+    padding: 0 12px;
+    line-height: 1.4;
+  }
+  .error-container {
+    text-align: right;
+    z-index: 1;
+  }
+  .error-container span:first-child {
+    opacity: 0;
+    transform: translateX(100%);
+    -webkit-animation: translateLeft 1000ms linear 1250ms forwards;
+    animation: translateLeft 1000ms linear 1250ms forwards;
+  }
+  .error-container span:last-child {
+    opacity: 0;
+    transform: translateX(100%);
+    -webkit-animation: translateLeft 1000ms linear 1450ms forwards;
+    animation: translateLeft 1000ms linear 1450ms forwards;
+  }
+  .error-container svg polygon {
+    -webkit-animation: removeFill 10ms ease-out 1600ms forwards;
+    animation: removeFill 10ms ease-out 1600ms forwards;
+  }
+  .message-container {
+    z-index: 0;
+    margin-left: -50px;
+  }
+  .message-container span:first-child {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-animation: translateRight 1000ms linear 1650ms forwards;
+    animation: translateRight 1000ms linear 1650ms forwards;
+  }
+  .message-container span:last-child {
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-animation: translateRight 1000ms linear 1850ms forwards;
+    animation: translateRight 1000ms linear 1850ms forwards;
+  }
+  @-webkit-keyframes drawStroke {
+    0% { stroke-dashoffset: 1649.099; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes drawStroke {
+    0% { stroke-dashoffset: 1649.099; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @-webkit-keyframes removeFill {
+    0% { fill: #343434; }
+    100% { fill: rgba(52, 52, 52, 0); }
+  }
+  @keyframes removeFill {
+    0% { fill: #343434; }
+    100% { fill: rgba(52, 52, 52, 0); }
+  }
+  @-webkit-keyframes pulseColor {
+    0% { color: white; }
+    25% { color: #43CB9D; }
+    50% { color: white; }
+    75% { color: #43CB9D; }
+    100% { color: white; }
+  }
+  @keyframes pulseColor {
+    0% { color: white; }
+    25% { color: #43CB9D; }
+    50% { color: white; }
+    75% { color: #43CB9D; }
+    100% { color: white; }
+  }
+  @-webkit-keyframes translateLeft {
+    0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 150, 0, 0, 1); opacity: 1; }
+    7.61% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 69.561, 0, 0, 1); }
+    11.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 39.355, 0, 0, 1); }
+    15.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 17.801, 0, 0, 1); }
+    18.92% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.02, 0, 0, 1); }
+    22.72% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -5.661, 0, 0, 1); }
+    30.23% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10.852, 0, 0, 1); }
+    50.25% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2.282, 0, 0, 1); }
+    70.27% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.519, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; }
+  }
+  @keyframes translateLeft {
+    0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 150, 0, 0, 1); opacity: 1; }
+    7.61% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 69.561, 0, 0, 1); }
+    11.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 39.355, 0, 0, 1); }
+    15.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 17.801, 0, 0, 1); }
+    18.92% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.02, 0, 0, 1); }
+    22.72% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -5.661, 0, 0, 1); }
+    30.23% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -10.852, 0, 0, 1); }
+    50.25% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2.282, 0, 0, 1); }
+    70.27% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.519, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; }
+  }
+  @-webkit-keyframes translateRight {
+    0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -150, 0, 0, 1); opacity: 1; }
+    7.61% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -69.561, 0, 0, 1); }
+    11.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -39.355, 0, 0, 1); }
+    15.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -17.801, 0, 0, 1); }
+    18.92% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -3.02, 0, 0, 1); }
+    22.72% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5.661, 0, 0, 1); }
+    30.23% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10.852, 0, 0, 1); }
+    50.25% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.282, 0, 0, 1); }
+    70.27% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.519, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; }
+  }
+  @keyframes translateRight {
+    0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -150, 0, 0, 1); opacity: 1; }
+    7.61% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -69.561, 0, 0, 1); }
+    11.41% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -39.355, 0, 0, 1); }
+    15.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -17.801, 0, 0, 1); }
+    18.92% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -3.02, 0, 0, 1); }
+    22.72% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5.661, 0, 0, 1); }
+    30.23% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 10.852, 0, 0, 1); }
+    50.25% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.282, 0, 0, 1); }
+    70.27% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.519, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; }
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="error-container">
+      <div>
+        <span>Errore&nbsp;404</span>
+        <span>pagina&nbsp;non&nbsp;trovata</span>
+      </div>
+      <svg viewBox='0 0 200 600'>
+        <polygon points='118.302698 8 59.5369448 66.7657528 186.487016 193.715824 14 366.202839 153.491505 505.694344 68.1413353 591.044514 200 591.044514 200 8'></polygon>
+      </svg>
+    </div>
+    <svg class='crack' viewBox='0 0 200 600'>
+      <polyline points='118.302698 8 59.5369448 66.7657528 186.487016 193.715824 14 366.202839 153.491505 505.694344 68.1413353 591.044514'></polyline>
+    </svg>
+    <div class="message-container">
+      <svg viewBox='0 0 200 600'>
+        <polygon points='118.302698 8 59.5369448 66.7657528 186.487016 193.715824 14 366.202839 153.491505 505.694344 68.1413353 591.044514 0 591.044514 0 8'></polygon>
+      </svg>
+      <div>
+        <span>ci&nbsp;scusiamo&nbsp;per&nbsp;il&nbsp;problema</span>
+        <span>
+          <a href="/">
+            <b>torna&nbsp;alla&nbsp;home.</b>
+          </a>
+        </span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // JavaScript opzionale per il tracciamento o funzionalità aggiuntive
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Pagina 404 caricata');
+      
+      // Reindirizza alla home page dopo un certo tempo (opzionale)
+      // setTimeout(function() {
+      //   window.location.href = '/';
+      // }, 10000); // Reindirizza dopo 10 secondi
+      
+      // Registra l'errore 404 in analytics (esempio)
+      // if (typeof gtag === 'function') {
+      //   gtag('event', '404_error', {
+      //     'page_path': window.location.pathname
+      //   });
+      // }
+    });
+  </script>
+</body>
+</html>

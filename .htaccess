@@ -1,0 +1,39 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# Redirect HTTP a HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect non-www a www
+RewriteCond %{HTTP_HOST} ^villadeigelsi\.it$ [NC]
+RewriteRule ^(.*)$ https://www.villadeigelsi.it/$1 [R=301,L]
+
+# Redirect specifico per index.html a root
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Gestione slash finale per le directory effettive
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ $1/ [R=301,L]
+
+# Rimuovi slash finale per i file (non la home)
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ $1 [R=301,L]
+
+# Supporto per URL senza .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Se l'utente scrive con .html, reindirizza alla versione senza estensione
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Imposta index.html come predefinito
+DirectoryIndex index.html
+
+ErrorDocument 404 /404.html
